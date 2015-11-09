@@ -1,0 +1,31 @@
+#!/bin/sh 
+
+lib=/Users/daniel/Desktop/mypack/package/hdf5lib
+
+cpp=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+
+source=dbase.cpp
+$cpp -I$lib/include $source -g -o dbase -L$lib/lib -lhdf5 -lhdf5_cpp
+
+exit 0
+
+
+source=h5tutr_crtdat.cpp
+$cpp -I$lib/include $source -g -o create -L$lib/lib -lhdf5 -lhdf5_cpp
+
+
+source=h5tutr_rdwt.cpp
+$cpp -I$lib/include $source -g -o write -L$lib/lib -lhdf5 -lhdf5_cpp
+	
+source=h5tutr_crtatt.cpp
+$cpp -I$lib/include $source -g -o attr -L$lib/lib -lhdf5 -lhdf5_cpp
+
+
+source=h5tutr_crtgrp.cpp
+$cpp -I$lib/include $source -g -o group -L$lib/lib -lhdf5 -lhdf5_cpp
+
+source=h5tutr_subset.cpp
+$cpp -I$lib/include $source -g -o group_subset -L$lib/lib -lhdf5 -lhdf5_cpp
+
+source=h5tutr_crtgrpd.cpp
+$cpp -I$lib/include $source -g -o create_ds_in_group -L$lib/lib -lhdf5 -lhdf5_cpp
